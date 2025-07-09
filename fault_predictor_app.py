@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 
-# Load the data
 df = pd.read_csv("sample_data.csv")
 X = df[["temperature", "pressure", "engine_rpm"]]
 y = df["code"]
