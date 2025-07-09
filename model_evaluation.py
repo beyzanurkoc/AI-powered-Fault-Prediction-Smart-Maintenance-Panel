@@ -29,7 +29,6 @@ top_n_idx = probas[0].argsort()[-3:][::-1]
 top_codes = model.classes_[top_n_idx]
 print("\nMost probable fault codes (top 3):", top_codes)
 
-
 cm = confusion_matrix(y_test, y_pred, labels=model.classes_)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=model.classes_)
 disp.plot(xticks_rotation=90)
