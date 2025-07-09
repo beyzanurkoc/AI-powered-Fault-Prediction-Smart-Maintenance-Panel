@@ -4,30 +4,23 @@ import matplotlib.pyplot as plt
 
 st.title("Data Analysis Panel")
 
-# Veri yükle
 df = pd.read_csv("sample_data.csv")
 
-# 1. İlk 10 satır
-st.subheader("First 10 Rows")
+st.subheader("All Rows")
 st.dataframe(df)
 
-# 2. Veri setinin boyutu
 st.write(f"Shape: {df.shape}")
 
-# 3. Eksik veri kontrolü
 st.subheader("Missing Values")
 st.write(df.isnull().sum())
 
-# 4. Sınıf dağılımı (bar chart + tablo)
 st.subheader("Fault Code Distribution")
 st.bar_chart(df["code"].value_counts())
 st.dataframe(df["code"].value_counts())
 
-# 5. Temel istatistiksel analiz
 st.subheader("Descriptive Statistics")
 st.dataframe(df[["temperature", "pressure", "engine_rpm"]].describe())
 
-# 6. Histogramlar (tab’lı)
 tab1, tab2, tab3 = st.tabs(["Temperature", "Pressure", "Engine RPM"])
 
 with tab1:
@@ -51,7 +44,6 @@ with tab3:
     ax.set_xlabel("Engine RPM")
     st.pyplot(fig)
 
-# 7. Ortalama sensör değerleri barplot
 st.subheader("Average Sensor Values per Fault Code")
 fig, ax = plt.subplots(figsize=(12,6))
 df.groupby("code")[["temperature", "pressure", "engine_rpm"]].mean().plot(kind="bar", ax=ax)
