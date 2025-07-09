@@ -1,221 +1,111 @@
-code,description,temperature,pressure,engine_rpm
-E006,alternator off,78,1.61,1181
-E006,alternator off,83,1.8,1112
-E006,alternator off,74,1.52,1107
-E006,alternator off,74,1.8,1276
-E006,alternator off,85,1.91,1232
-E006,alternator off,70,1.62,1243
-E006,alternator off,85,1.95,1129
-E006,alternator off,75,1.86,1111
-E006,alternator off,73,1.79,1149
-E006,alternator off,73,1.86,1148
-S011,transmission hydraulic pressure drop,105,1.01,904
-S011,transmission hydraulic pressure drop,99,1.05,1099
-S011,transmission hydraulic pressure drop,102,1.17,1018
-S011,transmission hydraulic pressure drop,82,1.06,1013
-S011,transmission hydraulic pressure drop,93,1.02,1094
-S011,transmission hydraulic pressure drop,96,0.87,1108
-S011,transmission hydraulic pressure drop,95,1.14,1020
-S011,transmission hydraulic pressure drop,100,1.06,1116
-S011,transmission hydraulic pressure drop,91,0.87,932
-S011,transmission hydraulic pressure drop,90,1.19,959
-AMB03,propeller not rotating/off,96,2.54,797
-AMB03,propeller not rotating/off,99,2.76,884
-AMB03,propeller not rotating/off,116,2.52,636
-AMB03,propeller not rotating/off,111,2.73,813
-AMB03,propeller not rotating/off,100,2.57,785
-AMB03,propeller not rotating/off,119,2.55,802
-AMB03,propeller not rotating/off,97,2.36,668
-AMB03,propeller not rotating/off,110,2.68,788
-AMB03,propeller not rotating/off,102,2.24,744
-AMB03,propeller not rotating/off,116,2.5,710
-FP100,water pump low pressure,113,0.89,1478
-FP100,water pump low pressure,117,1.12,1424
-FP100,water pump low pressure,120,0.85,1483
-FP100,water pump low pressure,106,0.97,1444
-FP100,water pump low pressure,106,0.88,1549
-FP100,water pump low pressure,104,0.89,1397
-FP100,water pump low pressure,95,0.9,1340
-FP100,water pump low pressure,116,0.94,1382
-FP100,water pump low pressure,112,1.18,1342
-FP100,water pump low pressure,110,1.13,1506
-FS01,fire detected,140,3.08,1265
-FS01,fire detected,122,3.24,1086
-FS01,fire detected,138,3.27,1151
-FS01,fire detected,141,3.03,1311
-FS01,fire detected,136,3.48,1347
-FS01,fire detected,145,3.49,1200
-FS01,fire detected,132,3.06,1265
-FS01,fire detected,138,2.94,1388
-FS01,fire detected,135,2.53,1294
-FS01,fire detected,135,2.85,1056
-VMS17,system general warning,107,1.61,1007
-VMS17,system general warning,99,1.34,1265
-VMS17,system general warning,100,1.34,1307
-VMS17,system general warning,83,1.6,1185
-VMS17,system general warning,88,1.45,1108
-VMS17,system general warning,90,1.72,1072
-VMS17,system general warning,102,1.7,1258
-VMS17,system general warning,82,1.6,1026
-VMS17,system general warning,107,1.64,1020
-VMS17,system general warning,108,1.91,1053
-ENG_OIL_PRES_LOW,engine oil pressure low,97,0.92,1306
-ENG_OIL_PRES_LOW,engine oil pressure low,103,1.2,1334
-ENG_OIL_PRES_LOW,engine oil pressure low,106,1.23,1395
-ENG_OIL_PRES_LOW,engine oil pressure low,98,1.14,1307
-ENG_OIL_PRES_LOW,engine oil pressure low,96,1.0,1238
-ENG_OIL_PRES_LOW,engine oil pressure low,114,1.37,1391
-ENG_OIL_PRES_LOW,engine oil pressure low,111,1.11,1193
-ENG_OIL_PRES_LOW,engine oil pressure low,108,0.99,1166
-ENG_OIL_PRES_LOW,engine oil pressure low,106,1.28,1360
-ENG_OIL_PRES_LOW,engine oil pressure low,114,0.96,1334
-ENG_COOL_TEMP_HIGH,engine coolant temp high,139,1.49,1297
-ENG_COOL_TEMP_HIGH,engine coolant temp high,150,1.82,1126
-ENG_COOL_TEMP_HIGH,engine coolant temp high,122,1.84,1263
-ENG_COOL_TEMP_HIGH,engine coolant temp high,149,1.97,1309
-ENG_COOL_TEMP_HIGH,engine coolant temp high,132,1.99,1264
-ENG_COOL_TEMP_HIGH,engine coolant temp high,139,1.63,1340
-ENG_COOL_TEMP_HIGH,engine coolant temp high,150,1.95,1320
-ENG_COOL_TEMP_HIGH,engine coolant temp high,146,1.55,1055
-ENG_COOL_TEMP_HIGH,engine coolant temp high,126,1.56,1030
-ENG_COOL_TEMP_HIGH,engine coolant temp high,136,1.49,1331
-TR_OIL_TEMP_HIGH,transmission oil temp high,126,1.66,1391
-TR_OIL_TEMP_HIGH,transmission oil temp high,114,1.23,1280
-TR_OIL_TEMP_HIGH,transmission oil temp high,110,1.32,1137
-TR_OIL_TEMP_HIGH,transmission oil temp high,121,1.53,1276
-TR_OIL_TEMP_HIGH,transmission oil temp high,114,1.49,1311
-TR_OIL_TEMP_HIGH,transmission oil temp high,129,1.47,1311
-TR_OIL_TEMP_HIGH,transmission oil temp high,115,1.63,1133
-TR_OIL_TEMP_HIGH,transmission oil temp high,122,1.23,1377
-TR_OIL_TEMP_HIGH,transmission oil temp high,115,1.56,1125
-TR_OIL_TEMP_HIGH,transmission oil temp high,129,1.37,1189
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,96,0.89,1190
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,92,1.0,1061
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,103,1.18,1163
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,104,0.81,1180
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,100,0.83,1106
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,91,0.95,1144
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,93,0.97,983
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,100,0.97,1194
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,97,1.02,1133
-TR_HYD_PRES_LOW,transmission hydraulic pressure low,106,0.87,1010
-ELEC_BAT_LOW,battery voltage low,65,1.02,1094
-ELEC_BAT_LOW,battery voltage low,64,1.12,1083
-ELEC_BAT_LOW,battery voltage low,69,1.23,878
-ELEC_BAT_LOW,battery voltage low,78,1.39,1147
-ELEC_BAT_LOW,battery voltage low,61,1.18,983
-ELEC_BAT_LOW,battery voltage low,66,1.39,908
-ELEC_BAT_LOW,battery voltage low,75,1.1,1003
-ELEC_BAT_LOW,battery voltage low,80,1.34,1071
-ELEC_BAT_LOW,battery voltage low,78,1.14,1133
-ELEC_BAT_LOW,battery voltage low,60,1.03,993
-ELEC_ALT_ERR,alternator error,86,1.41,1251
-ELEC_ALT_ERR,alternator error,98,1.79,1236
-ELEC_ALT_ERR,alternator error,86,1.68,1336
-ELEC_ALT_ERR,alternator error,89,1.75,1231
-ELEC_ALT_ERR,alternator error,88,1.47,1343
-ELEC_ALT_ERR,alternator error,83,1.65,1206
-ELEC_ALT_ERR,alternator error,95,1.58,1221
-ELEC_ALT_ERR,alternator error,81,1.86,1331
-ELEC_ALT_ERR,alternator error,98,1.77,1289
-ELEC_ALT_ERR,alternator error,87,1.39,1223
-COOL_LVL_LOW,coolant level low,113,1.21,1074
-COOL_LVL_LOW,coolant level low,114,1.55,1139
-COOL_LVL_LOW,coolant level low,119,1.09,1296
-COOL_LVL_LOW,coolant level low,117,1.67,1189
-COOL_LVL_LOW,coolant level low,115,1.04,1173
-COOL_LVL_LOW,coolant level low,103,1.5,1199
-COOL_LVL_LOW,coolant level low,124,1.1,1246
-COOL_LVL_LOW,coolant level low,118,1.69,1031
-COOL_LVL_LOW,coolant level low,121,1.41,1064
-COOL_LVL_LOW,coolant level low,122,1.57,1200
-COOL_FAN_ERR,cooling fan error,111,2.17,942
-COOL_FAN_ERR,cooling fan error,125,1.51,988
-COOL_FAN_ERR,cooling fan error,117,2.18,1055
-COOL_FAN_ERR,cooling fan error,118,2.15,1029
-COOL_FAN_ERR,cooling fan error,120,1.75,1127
-COOL_FAN_ERR,cooling fan error,105,1.8,1137
-COOL_FAN_ERR,cooling fan error,119,1.75,1112
-COOL_FAN_ERR,cooling fan error,115,1.75,1038
-COOL_FAN_ERR,cooling fan error,114,1.86,1168
-COOL_FAN_ERR,cooling fan error,109,2.06,1126
-AMPH_PROP_ERR,amphibious propeller error,108,2.67,748
-AMPH_PROP_ERR,amphibious propeller error,112,2.34,724
-AMPH_PROP_ERR,amphibious propeller error,100,2.06,831
-AMPH_PROP_ERR,amphibious propeller error,93,2.29,905
-AMPH_PROP_ERR,amphibious propeller error,105,2.04,807
-AMPH_PROP_ERR,amphibious propeller error,98,2.5,751
-AMPH_PROP_ERR,amphibious propeller error,110,2.7,927
-AMPH_PROP_ERR,amphibious propeller error,108,2.02,877
-AMPH_PROP_ERR,amphibious propeller error,108,2.58,909
-AMPH_PROP_ERR,amphibious propeller error,106,2.39,780
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,99,1.01,1324
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,98,0.94,1149
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,112,0.83,1242
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,120,0.9,1261
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,107,1.13,1154
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,120,0.93,1246
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,108,0.94,1165
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,112,0.92,1430
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,110,1.0,1429
-AMPH_PUMP_PRES_LOW,amphibious pump low pressure,115,1.12,1409
-AMPH_SEAL_ERR,amphibious seal error,102,1.68,968
-AMPH_SEAL_ERR,amphibious seal error,100,1.45,1024
-AMPH_SEAL_ERR,amphibious seal error,106,1.3,1190
-AMPH_SEAL_ERR,amphibious seal error,95,1.2,951
-AMPH_SEAL_ERR,amphibious seal error,97,1.2,1245
-AMPH_SEAL_ERR,amphibious seal error,104,1.06,948
-AMPH_SEAL_ERR,amphibious seal error,105,1.59,979
-AMPH_SEAL_ERR,amphibious seal error,102,1.65,1162
-AMPH_SEAL_ERR,amphibious seal error,87,1.29,1133
-AMPH_SEAL_ERR,amphibious seal error,96,1.18,1220
-FIRE_DET_ACT,fire detector activated,144,2.66,1070
-FIRE_DET_ACT,fire detector activated,141,2.45,1208
-FIRE_DET_ACT,fire detector activated,131,3.03,1398
-FIRE_DET_ACT,fire detector activated,139,2.06,1182
-FIRE_DET_ACT,fire detector activated,138,2.79,1105
-FIRE_DET_ACT,fire detector activated,151,3.14,1189
-FIRE_DET_ACT,fire detector activated,151,2.4,1194
-FIRE_DET_ACT,fire detector activated,147,3.18,1104
-FIRE_DET_ACT,fire detector activated,148,2.57,1262
-FIRE_DET_ACT,fire detector activated,152,3.17,1324
-FIRE_SYS_ERR,fire system error,109,2.46,1101
-FIRE_SYS_ERR,fire system error,113,2.21,1193
-FIRE_SYS_ERR,fire system error,111,2.74,1054
-FIRE_SYS_ERR,fire system error,95,2.23,1171
-FIRE_SYS_ERR,fire system error,94,2.06,1074
-FIRE_SYS_ERR,fire system error,119,1.91,1016
-FIRE_SYS_ERR,fire system error,109,1.93,1198
-FIRE_SYS_ERR,fire system error,115,2.31,1055
-FIRE_SYS_ERR,fire system error,109,2.52,1246
-FIRE_SYS_ERR,fire system error,90,2.41,1080
-OBS_CAM_ERR,observation camera error,65,1.53,948
-OBS_CAM_ERR,observation camera error,90,1.49,1003
-OBS_CAM_ERR,observation camera error,81,1.46,1023
-OBS_CAM_ERR,observation camera error,66,1.43,846
-OBS_CAM_ERR,observation camera error,77,1.55,819
-OBS_CAM_ERR,observation camera error,71,1.56,1030
-OBS_CAM_ERR,observation camera error,70,1.53,1008
-OBS_CAM_ERR,observation camera error,82,1.24,984
-OBS_CAM_ERR,observation camera error,68,1.19,931
-OBS_CAM_ERR,observation camera error,79,1.57,951
-OBS_SENS_ERR,observation sensor error,87,1.52,1081
-OBS_SENS_ERR,observation sensor error,85,1.65,941
-OBS_SENS_ERR,observation sensor error,74,1.3,1148
-OBS_SENS_ERR,observation sensor error,84,1.64,1087
-OBS_SENS_ERR,observation sensor error,82,1.24,1142
-OBS_SENS_ERR,observation sensor error,71,1.11,1163
-OBS_SENS_ERR,observation sensor error,74,1.63,1097
-OBS_SENS_ERR,observation sensor error,73,1.58,1136
-OBS_SENS_ERR,observation sensor error,71,1.53,922
-OBS_SENS_ERR,observation sensor error,77,1.65,1051
-WPN_SYS_ERR,weapon system error,92,1.76,1351
-WPN_SYS_ERR,weapon system error,103,1.33,1325
-WPN_SYS_ERR,weapon system error,115,1.74,1228
-WPN_SYS_ERR,weapon system error,116,1.87,1409
-WPN_SYS_ERR,weapon system error,114,1.95,1396
-WPN_SYS_ERR,weapon system error,97,1.64,1429
-WPN_SYS_ERR,weapon system error,92,2.0,1407
-WPN_SYS_ERR,weapon system error,117,1.51,1400
-WPN_SYS_ERR,weapon system error,94,1.3,1342
-WPN_SYS_ERR,weapon system error,106,1.93,1439
+code,temperature,pressure,engine_rpm
+E006,60,3.28,1272
+E006,139,2.96,817
+E006,113,0.91,809
+E006,74,0.86,1639
+E006,79,3.16,1588
+S011,136,0.82,1746
+S011,82,3.36,843
+S011,142,2.9,1292
+S011,141,2.16,1160
+S011,102,1.82,1227
+AMB03,60,1.82,1683
+AMB03,110,1.66,1088
+AMB03,124,2.37,1834
+AMB03,85,3.2,1133
+AMB03,74,1.43,1070
+FP100,61,3.06,934
+FP100,82,0.93,1427
+FP100,74,1.87,1952
+FP100,134,2.21,1767
+FP100,100,2.48,1653
+FS01,124,3.44,869
+FS01,114,1.08,1880
+FS01,116,1.37,1425
+FS01,88,2.14,1844
+FS01,112,0.87,1003
+VMS17,93,3.16,899
+VMS17,104,2.57,1481
+VMS17,96,1.91,1478
+VMS17,104,2.89,1238
+VMS17,124,1.93,1449
+ENG_OIL_PRES_LOW,66,3.05,1105
+ENG_OIL_PRES_LOW,123,3.11,836
+ENG_OIL_PRES_LOW,80,3.29,1517
+ENG_OIL_PRES_LOW,115,2.63,1016
+ENG_OIL_PRES_LOW,97,1.43,1609
+ENG_COOL_TEMP_HIGH,128,0.81,1524
+ENG_COOL_TEMP_HIGH,108,2.92,1407
+ENG_COOL_TEMP_HIGH,111,3.0,1872
+ENG_COOL_TEMP_HIGH,68,2.11,1590
+ENG_COOL_TEMP_HIGH,113,3.09,1794
+TR_OIL_TEMP_HIGH,122,1.81,1791
+TR_OIL_TEMP_HIGH,149,2.74,1796
+TR_OIL_TEMP_HIGH,141,1.51,1723
+TR_OIL_TEMP_HIGH,111,2.83,1971
+TR_OIL_TEMP_HIGH,113,3.07,868
+TR_HYD_PRES_LOW,90,2.15,1928
+TR_HYD_PRES_LOW,72,3.45,1357
+TR_HYD_PRES_LOW,124,3.25,1500
+TR_HYD_PRES_LOW,80,1.47,843
+TR_HYD_PRES_LOW,68,2.92,965
+ELEC_BAT_LOW,105,1.13,856
+ELEC_BAT_LOW,103,2.35,1193
+ELEC_BAT_LOW,133,3.11,808
+ELEC_BAT_LOW,145,1.64,807
+ELEC_BAT_LOW,82,3.15,1861
+ELEC_ALT_ERR,97,1.26,1134
+ELEC_ALT_ERR,98,1.05,1050
+ELEC_ALT_ERR,93,1.52,1003
+ELEC_ALT_ERR,112,1.81,891
+ELEC_ALT_ERR,141,2.03,1049
+COOL_LVL_LOW,118,2.82,819
+COOL_LVL_LOW,136,1.71,1398
+COOL_LVL_LOW,109,0.91,1244
+COOL_LVL_LOW,132,0.9,1316
+COOL_LVL_LOW,138,2.43,1715
+COOL_FAN_ERR,141,3.48,1359
+COOL_FAN_ERR,93,1.81,1058
+COOL_FAN_ERR,112,0.84,1766
+COOL_FAN_ERR,121,1.34,1700
+COOL_FAN_ERR,87,3.01,1112
+AMPH_PROP_ERR,132,2.99,1025
+AMPH_PROP_ERR,125,1.55,1163
+AMPH_PROP_ERR,146,2.79,1638
+AMPH_PROP_ERR,65,2.33,980
+AMPH_PROP_ERR,101,1.51,1665
+AMPH_PUMP_PRES_LOW,92,0.98,1826
+AMPH_PUMP_PRES_LOW,99,1.82,1503
+AMPH_PUMP_PRES_LOW,139,2.96,1130
+AMPH_PUMP_PRES_LOW,130,2.43,1378
+AMPH_PUMP_PRES_LOW,90,1.55,1807
+AMPH_SEAL_ERR,133,1.77,1481
+AMPH_SEAL_ERR,146,3.46,1728
+AMPH_SEAL_ERR,89,2.99,1245
+AMPH_SEAL_ERR,103,1.57,1000
+AMPH_SEAL_ERR,88,2.29,1945
+FIRE_DET_ACT,147,2.29,1160
+FIRE_DET_ACT,142,3.3,1291
+FIRE_DET_ACT,132,2.21,1728
+FIRE_DET_ACT,65,3.43,1392
+FIRE_DET_ACT,95,2.83,1567
+FIRE_SYS_ERR,143,2.69,1086
+FIRE_SYS_ERR,104,1.28,1240
+FIRE_SYS_ERR,108,2.15,1542
+FIRE_SYS_ERR,120,1.52,1160
+FIRE_SYS_ERR,79,2.61,1361
+OBS_CAM_ERR,106,3.26,822
+OBS_CAM_ERR,146,2.88,1122
+OBS_CAM_ERR,103,1.52,1198
+OBS_CAM_ERR,123,1.92,1602
+OBS_CAM_ERR,120,2.75,1222
+OBS_SENS_ERR,85,2.34,1302
+OBS_SENS_ERR,90,1.92,1369
+OBS_SENS_ERR,78,1.63,1235
+OBS_SENS_ERR,114,2.21,1578
+OBS_SENS_ERR,86,2.21,914
+WPN_SYS_ERR,120,2.19,1872
+WPN_SYS_ERR,147,3.03,906
+WPN_SYS_ERR,67,0.98,1888
+WPN_SYS_ERR,138,1.95,1149
+WPN_SYS_ERR,80,2.55,1574
