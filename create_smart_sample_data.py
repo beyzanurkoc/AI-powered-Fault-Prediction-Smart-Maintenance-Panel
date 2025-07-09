@@ -29,7 +29,7 @@ codes = [
 rows = []
 
 for code,t_min, t_max, p_min, p_max, rpm_min, rpm_max in codes:
-    for i in range(10): 
+    for i in range(50): 
         row = {
             "code": code,
             "temperature": np.random.randint(t_min, t_max + 1),
