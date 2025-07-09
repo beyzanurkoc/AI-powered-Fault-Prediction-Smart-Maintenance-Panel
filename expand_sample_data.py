@@ -10,7 +10,6 @@ for idx, row in df.iterrows():
     for i in range(5):
         new_row = {
             "code": row["code"],
-            "description": row["description"],
             "temperature": np.random.randint(60, 150),
             "pressure": round(np.random.uniform(0.8, 3.5), 2),
             "engine_rpm": np.random.randint(800, 2000)
