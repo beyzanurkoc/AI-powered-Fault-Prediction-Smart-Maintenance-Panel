@@ -1,0 +1,23 @@
+code,recommendation
+E006,Check the charging circuit and cables.
+S011,Check the hydraulic oil level and filter.
+AMB03,Check the propeller mechanical connections.
+FP100,Check the water pump valves and pressure switches.
+FS01,Check the water pump valves and pressure switches.
+VMS17,Check the battery connections and charging circuit.
+ENG_OIL_PRES_LOW,"Stop the engine, check the oil level and leaks."
+ENG_COOL_TEMP_HIGH,Let the engine idle and inspect the cooling system.
+TR_OIL_TEMP_HIGH,Check the transmission oil level and cooling system.
+TR_HYD_PRES_LOW,Check the hydraulic pump and pressure line.
+ELEC_BAT_LOW,Check the battery voltage and charging system.
+ELEC_ALT_ERR,Check the alternator and regulator.
+COOL_LVL_LOW,Coolant level should be topped up and leakage check should be done.
+COOL_FAN_ERR,Check the fan motor and electrical connections.
+AMPH_PROP_ERR,Amphibious propeller mechanical control should be performed.
+AMPH_PUMP_PRES_LOW,Check the amphibious pump pressure line.
+AMPH_SEAL_ERR,Check the sealing surface and gasket.
+FIRE_DET_ACT,Fire extinguishing system should be made ready.
+FIRE_SYS_ERR,Repair the automatic fire extinguishing system.
+OBS_CAM_ERR,Check the camera unit connections.
+OBS_SENS_ERR,Check sensor connections and calibration.
+WPN_SYS_ERR,The communication and power line of the weapon control system should be checked.
