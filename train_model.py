@@ -16,8 +16,6 @@ model = DecisionTreeClassifier(random_state=42)
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
-
-
 recommendations = pd.read_csv("recommendations.csv")
 suggestion_map = dict(zip(recommendations["code"], recommendations["recommendation"]))
 
