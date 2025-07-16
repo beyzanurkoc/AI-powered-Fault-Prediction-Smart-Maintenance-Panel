@@ -41,5 +41,5 @@ for code,t_min, t_max, p_min, p_max, rpm_min, rpm_max in codes:
 df = pd.DataFrame(rows)
 df.to_csv("sample_data.csv", index=False)
 
-print("sample_data.csv created with extended realistic sensor ranges!")
+print("sample_data.csv created with extended realistic sensor ranges")
 print(df.to_string())
