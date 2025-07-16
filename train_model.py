@@ -16,15 +16,7 @@ model = DecisionTreeClassifier(random_state=42)
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
-from sklearn.metrics import classification_report
-report_dict = classification_report(y_test, y_pred, output_dict=True)
-report_df = pd.DataFrame(report_dict).transpose()
-accuracy = report_dict["accuracy"]
-f1_macro = report_df.loc["macro avg", "f1-score"]
-st.metric(label="Accuracy", value=f"{accuracy:.2f}")
-st.metric(label="Macro F1-score", value=f"{f1_macro:.2f}")
-st.subheader("Classification Report (Tablo)")
-st.dataframe(report_df.round(2))
+
 
 recommendations = pd.read_csv("recommendations.csv")
 suggestion_map = dict(zip(recommendations["code"], recommendations["recommendation"]))
