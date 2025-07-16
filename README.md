@@ -1,6 +1,6 @@
 # AI-powered Fault Prediction & Smart Maintenance Panel
 
-This project is an interactive Streamlit web application for predicting fault codes and providing smart maintenance recommendations for armored vehicles. The project was developed as part of a 20-day internship assignment at FNSS.
+This project is an interactive Streamlit web application for predicting fault codes and providing smart maintenance recommendations for armored vehicles. 
 
 ## Features
 
@@ -31,4 +31,4 @@ This project is an interactive Streamlit web application for predicting fault co
 
 ---
 
-Developed by Beyza Nur Koç, FNSS Summer Internship 2025.
+Developed by Beyza Nur Koç
