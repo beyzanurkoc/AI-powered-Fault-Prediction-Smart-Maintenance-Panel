@@ -8,7 +8,6 @@ This project is an interactive Streamlit web application for predicting fault co
 - Maintenance recommendations for each predicted fault code (automatic suggestion system)
 - Supports manual input and simulated live data
 - Visualizes model evaluation metrics, confusion matrix, and feature importance
-- Power BI dashboard for advanced data analysis
 
 ## Getting Started
 
