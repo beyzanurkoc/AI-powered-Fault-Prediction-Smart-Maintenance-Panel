@@ -40,6 +40,11 @@ This project is an interactive Streamlit web application for predicting fault co
 - **Visualizations:** View model performance metrics, confusion matrix, and feature importance charts.
 - **Download Results:** Download prediction results as a CSV file for further analysis.
 
+## Live Demo
+
+You can try the app live here: [Open the Smart Maintenance Panel](https://ai-powered-fault-prediction-smart-maintenance-panel-6fnhgso4o6.streamlit.app/)
+
+
 ---
 
 Developed by Beyza Nur Koç
