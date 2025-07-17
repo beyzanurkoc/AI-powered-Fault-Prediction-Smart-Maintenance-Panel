@@ -2,85 +2,81 @@ import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-import random
 
 st.title("AI Fault Code Prediction and Maintenance Suggestion Panel")
 
-tab1, tab2, tab3, tab4 = st.tabs(["Prediction", "Model Evaluation", "Visualizations", "Batch Prediction"])
-
-
-df = pd.read_csv("sample_data.csv")
-X = df[["temperature", "pressure", "engine_rpm"]]
-y = df["code"]
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+sample_df = pd.read_csv("sample_data.csv")
+X = sample_df[["temperature", "pressure", "engine_rpm"]]
+y = sample_df["code"]
 model = DecisionTreeClassifier(random_state=42)
-model.fit(X_train, y_train)
+model.fit(X, y)
 
 recommendations = pd.read_csv("recommendations.csv")
-suggestion_map = dict(zip(recommendations["code"], recommendations["recommendation"]))
+recommendation_map = dict(zip(recommendations["code"], recommendations["recommendation"]))
 
+tab1, tab2, tab3 = st.tabs(["Batch Prediction", "Model Evaluation", "Visualizations"])
 
 with tab1:
-    st.header("Predict Fault Code")
-    st.info("Please enter the latest sensor values OR click the button to get simulated live data!")
+    st.header("Batch Prediction (Upload and Analyze Big Data)")
+    uploaded_file = st.file_uploader("Upload your big CSV file", type=["csv"], key="batch_csv")
+    if uploaded_file is not None:
+        bigdata = pd.read_csv(uploaded_file)
+        st.write("Sample of uploaded data:")
+        st.dataframe(bigdata.head(20))
 
-    if st.button("Get Live Sensor Data"):
-        temperature = random.randint(60, 120)
-        pressure = round(random.uniform(1.0, 3.0), 2)
-        engine_rpm = random.randint(900, 1400)
-        st.session_state["temperature"] = temperature
-        st.session_state["pressure"] = pressure
-        st.session_state["engine_rpm"] = engine_rpm
+        X_big = bigdata[["temperature", "pressure", "engine_rpm"]]
+        bigdata["predicted_code"] = model.predict(X_big)
+        bigdata["recommendation"] = bigdata["predicted_code"].map(recommendation_map)
+        
+        st.session_state["uploaded_bigdata"] = bigdata
+
+        st.success("Predictions completed!")
+        st.dataframe(bigdata.head(20))
+
+        csv = bigdata.to_csv(index=False).encode()
+        st.download_button("Download Results as CSV", data=csv, file_name="bigdata_with_predictions.csv", mime="text/csv")
     else:
-        temperature = st.session_state.get("temperature", 80)
-        pressure = st.session_state.get("pressure", 2.0)
-        engine_rpm = st.session_state.get("engine_rpm", 1000)
-
-    temperature = st.number_input("Temperature (°C)", min_value=0, max_value=200, value=temperature, key="temp_input_1")
-    pressure = st.number_input("Pressure (bar)", min_value=0.0, max_value=10.0, value=pressure, key="press_input_1")
-    engine_rpm = st.number_input("Engine RPM", min_value=0, max_value=5000, value=engine_rpm, key="rpm_input_1")
-
-    if st.button("Predict Fault Code", key="predict_button_1"):
-        sample_input = pd.DataFrame({
-            "temperature": [temperature],
-            "pressure": [pressure],
-            "engine_rpm": [engine_rpm]
-        })
-        predicted_code = model.predict(sample_input)[0]
-        st.success(f"Predicted fault code: {predicted_code}")
-
-        suggestion = suggestion_map.get(predicted_code, "No recommendation available.")
-        st.info(f"Suggested maintenance: {suggestion}")
-
+        st.info("Please upload your big data CSV file (sensor values only).")
+        st.session_state["uploaded_bigdata"] = None
 
 with tab2:
-    st.header("Model Evaluation")
-    st.warning("Here you can view the model's performance metrics, such as accuracy, F1-score, and the detailed classification report. You can also see the confusion matrix showing how well the model distinguishes between fault codes.")
-    y_pred = model.predict(X_test)
-    report_dict = classification_report(y_test, y_pred, output_dict=True)
-    report_df = pd.DataFrame(report_dict).transpose()
+    st.header("Model Evaluation on Uploaded Data")
+    bigdata = st.session_state.get("uploaded_bigdata", None)
+    if bigdata is not None:
+        if "code" in bigdata.columns:
+            y_true = bigdata["code"]
+            y_pred = bigdata["predicted_code"]
+            st.write("Evaluating using the actual 'code' column in the uploaded file.")
+        else:
+            y_true = None
+            y_pred = bigdata["predicted_code"]
+            st.write("No true fault codes in uploaded file. Evaluation will only show predicted distribution.")
 
-    accuracy = report_dict["accuracy"]
-    f1_macro = report_df.loc["macro avg", "f1-score"]
+        st.subheader("Predicted Fault Code Distribution")
+        st.bar_chart(bigdata["predicted_code"].value_counts())
 
-    st.metric(label="Accuracy", value=f"{accuracy:.2f}")
-    st.metric(label="Macro F1-score", value=f"{f1_macro:.2f}")
-    st.subheader("Classification Report ")
-    st.dataframe(report_df.round(2))
+        if y_true is not None:
+            st.subheader("Classification Report")
+            report_dict = classification_report(y_true, y_pred, output_dict=True, zero_division=0)
+            report_df = pd.DataFrame(report_dict).transpose()
+            st.dataframe(report_df.round(2))
 
-    st.subheader("Confusion Matrix ")
-    cm = confusion_matrix(y_test, y_pred, labels=model.classes_)
-    fig, ax = plt.subplots(figsize=(8, 6))
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=model.classes_)
-    disp.plot(ax=ax, xticks_rotation=90)
-    st.pyplot(fig)
+            st.subheader("Confusion Matrix")
+            labels = sorted(list(set(y_true) | set(y_pred)))
+            cm = confusion_matrix(y_true, y_pred, labels=labels)
+            fig, ax = plt.subplots(figsize=(8, 6))
+            disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
+            disp.plot(ax=ax, xticks_rotation=90)
+            st.pyplot(fig)
+        else:
+            st.info("True codes ('code' column) not found in uploaded file. Showing only predicted code distribution.")
+    else:
+        st.warning("Please upload a big data CSV file in the Batch Prediction tab first!")
 
 with tab3:
-    st.header("Feature Importance ")
+    st.header("Feature Importance")
     st.info("The feature importance graph below shows which sensor values have the most influence on the model's fault code prediction.")
     feature_names = ["temperature", "pressure", "engine_rpm"]
     importances = model.feature_importances_
@@ -89,32 +85,3 @@ with tab3:
     ax2.set_ylabel("Importance")
     ax2.set_title("Feature Importance")
     st.pyplot(fig2)
-
-with tab4:
-    st.header("Batch Prediction (Upload and Analyze Big Data)")
-    uploaded_file = st.file_uploader("Upload your big CSV file", type=["csv"])
-    if uploaded_file is not None:
-        bigdata = pd.read_csv(uploaded_file)
-        st.write("Sample of uploaded data:")
-        st.dataframe(bigdata.head())
-
-        train_data = pd.read_csv("sample_data.csv")
-        X_train = train_data[["temperature", "pressure", "engine_rpm"]]
-        y_train = train_data["code"]
-        model = DecisionTreeClassifier(random_state=42)
-        model.fit(X_train, y_train)
-
-        X_big = bigdata[["temperature", "pressure", "engine_rpm"]]
-        bigdata["predicted_code"] = model.predict(X_big)
-
-        recommendations = pd.read_csv("recommendations.csv")
-        recommendation_map = dict(zip(recommendations["code"], recommendations["recommendation"]))
-        bigdata["recommendation"] = bigdata["predicted_code"].map(recommendation_map)
-
-        st.success("Predictions completed!")
-        st.dataframe(bigdata.head(20))  
-
-        csv = bigdata.to_csv(index=False).encode()
-        st.download_button("Download Results as CSV", data=csv, file_name="bigdata_with_predictions.csv", mime="text/csv")
-    else:
-        st.info("Please upload your big data CSV file (sensor values only).")
