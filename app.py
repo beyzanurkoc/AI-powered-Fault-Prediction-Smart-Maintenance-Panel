@@ -20,16 +20,34 @@ tab1, tab2, tab3 = st.tabs(["Batch Prediction", "Model Evaluation", "Visualizati
 
 with tab1:
     st.header("Batch Prediction (Upload and Analyze Big Data)")
+
+    st.subheader("Option 1: Upload CSV file (max 200MB)")
     uploaded_file = st.file_uploader("Upload your big CSV file", type=["csv"], key="batch_csv")
-    if uploaded_file is not None:
+
+    st.subheader("Option 2: Load from server path")
+    file_path = st.text_input("Or enter the full path to your CSV file (e.g. C:/proje/bigdata.csv):")
+
+    bigdata = None
+
+    if file_path:
+        try:
+            bigdata = pd.read_csv(file_path)
+            st.success(f"File loaded from: {file_path}")
+        except Exception as e:
+            st.error(f"Could not read file from path: {e}")
+
+    elif uploaded_file is not None:
         bigdata = pd.read_csv(uploaded_file)
-        st.write("Sample of uploaded data:")
+        st.success("File loaded from upload!")
+
+    if bigdata is not None:
+        st.write("Sample of loaded data:")
         st.dataframe(bigdata.head(20))
 
         X_big = bigdata[["temperature", "pressure", "engine_rpm"]]
         bigdata["predicted_code"] = model.predict(X_big)
         bigdata["recommendation"] = bigdata["predicted_code"].map(recommendation_map)
-        
+
         st.session_state["uploaded_bigdata"] = bigdata
 
         st.success("Predictions completed!")
@@ -38,7 +56,7 @@ with tab1:
         csv = bigdata.to_csv(index=False).encode()
         st.download_button("Download Results as CSV", data=csv, file_name="bigdata_with_predictions.csv", mime="text/csv")
     else:
-        st.info("Please upload your big data CSV file (sensor values only).")
+        st.info("Please upload a CSV file **or** enter a valid file path (absolute path) to your big data CSV file.")
         st.session_state["uploaded_bigdata"] = None
 
 with tab2:
