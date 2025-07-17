@@ -7,10 +7,9 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import random
 
-
 st.title("AI Fault Code Prediction and Maintenance Suggestion Panel")
 
-tab1, tab2, tab3 = st.tabs(["Prediction", "Model Evaluation", "Visualizations"])
+tab1, tab2, tab3, tab4 = st.tabs(["Prediction", "Model Evaluation", "Visualizations", "Batch Prediction"])
 
 
 df = pd.read_csv("sample_data.csv")
@@ -90,3 +89,32 @@ with tab3:
     ax2.set_ylabel("Importance")
     ax2.set_title("Feature Importance")
     st.pyplot(fig2)
+
+with tab4:
+    st.header("Batch Prediction (Upload and Analyze Big Data)")
+    uploaded_file = st.file_uploader("Upload your big CSV file", type=["csv"])
+    if uploaded_file is not None:
+        bigdata = pd.read_csv(uploaded_file)
+        st.write("Sample of uploaded data:")
+        st.dataframe(bigdata.head())
+
+        train_data = pd.read_csv("sample_data.csv")
+        X_train = train_data[["temperature", "pressure", "engine_rpm"]]
+        y_train = train_data["code"]
+        model = DecisionTreeClassifier(random_state=42)
+        model.fit(X_train, y_train)
+
+        X_big = bigdata[["temperature", "pressure", "engine_rpm"]]
+        bigdata["predicted_code"] = model.predict(X_big)
+
+        recommendations = pd.read_csv("recommendations.csv")
+        recommendation_map = dict(zip(recommendations["code"], recommendations["recommendation"]))
+        bigdata["recommendation"] = bigdata["predicted_code"].map(recommendation_map)
+
+        st.success("Predictions completed!")
+        st.dataframe(bigdata.head(20))  
+
+        csv = bigdata.to_csv(index=False).encode()
+        st.download_button("Download Results as CSV", data=csv, file_name="bigdata_with_predictions.csv", mime="text/csv")
+    else:
+        st.info("Please upload your big data CSV file (sensor values only).")
