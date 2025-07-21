@@ -17,7 +17,7 @@ model.fit(X, y)
 recommendations = pd.read_csv("recommendations.csv")
 recommendation_map = dict(zip(recommendations["code"], recommendations["recommendation"]))
 
-tab1, tab2, tab3 = st.tabs(["Batch Prediction", "Model Evaluation", "Visualizations"])
+tab1, tab2 = st.tabs(["Batch Prediction", "Model Evaluation"])
 
 with tab1:
     st.header("Batch Prediction ")
@@ -36,7 +36,6 @@ with tab1:
         try:
             bigdata = pd.read_csv(file_path)
             st.success(f"File loaded from: {file_path}")
-            st.dataframe(bigdata.head(20))
         except Exception as e:
             st.error(f"Could not read file from path: {e}")
 
@@ -97,13 +96,3 @@ with tab2:
     else:
         st.warning("Please upload a big data CSV file in the Batch Prediction tab first!")
 
-with tab3:
-    st.header("Feature Importance")
-    st.info("The feature importance graph below shows which sensor values have the most influence on the model's fault code prediction.")
-    feature_names = ["temperature", "pressure", "engine_rpm"]
-    importances = model.feature_importances_
-    fig2, ax2 = plt.subplots()
-    ax2.bar(feature_names, importances)
-    ax2.set_ylabel("Importance")
-    ax2.set_title("Feature Importance")
-    st.pyplot(fig2)
