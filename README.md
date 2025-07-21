@@ -42,7 +42,7 @@ This project is an interactive Streamlit web application for predicting fault co
 
 ## Live Demo
 
-You can try the app live here: [Open the Smart Maintenance Panel](https://ai-powered-fault-prediction-smart-maintenance-panel-6fnhgso4o6.streamlit.app/)
+You can try the app live here: [Open the Smart Maintenance Panel](https://ai-powered-fault-prediction-smart-maintenance-panel-een6klx26x.streamlit.app/)
 
 
 ---
