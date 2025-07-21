@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
+import os
 
 st.title("AI Fault Code Prediction and Maintenance Suggestion Panel")
 
@@ -30,9 +31,12 @@ with tab1:
     bigdata = None
 
     if file_path:
+        st.write(f"Trying to load file: {file_path}")
+        st.write(f"File exists: {os.path.exists(file_path)}")
         try:
             bigdata = pd.read_csv(file_path)
             st.success(f"File loaded from: {file_path}")
+            st.dataframe(bigdata.head(20))
         except Exception as e:
             st.error(f"Could not read file from path: {e}")
 
