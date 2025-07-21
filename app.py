@@ -19,7 +19,7 @@ recommendation_map = dict(zip(recommendations["code"], recommendations["recommen
 tab1, tab2, tab3 = st.tabs(["Batch Prediction", "Model Evaluation", "Visualizations"])
 
 with tab1:
-    st.header("Batch Prediction (Upload and Analyze Big Data)")
+    st.header("Batch Prediction ")
 
     st.subheader("Option 1: Upload CSV file (max 200MB)")
     uploaded_file = st.file_uploader("Upload your big CSV file", type=["csv"], key="batch_csv")
