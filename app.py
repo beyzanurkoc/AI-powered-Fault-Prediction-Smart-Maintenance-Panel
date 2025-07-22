@@ -22,7 +22,7 @@ tab1, tab2 = st.tabs(["Batch Prediction", "Model Evaluation"])
 with tab1:
     st.header("Batch Prediction ")
 
-    st.subheader("Option 1: Upload CSV file (max 200MB)")
+    st.subheader("Option 1: Upload CSV file (max 500MB)")
     uploaded_file = st.file_uploader("Upload your big CSV file", type=["csv"], key="batch_csv")
 
     st.subheader("Option 2: Load from server path")
