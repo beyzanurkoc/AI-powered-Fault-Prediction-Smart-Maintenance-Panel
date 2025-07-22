@@ -20,7 +20,7 @@ This project is an interactive Streamlit application that predicts fault codes f
 
 * **Cloud/Demo Usage:**
 
-  * Users can upload CSV files up to 200 MB via the web interface.
+  * Users can upload CSV files up to 500 MB via the web interface.
   * File path option is not available on Streamlit Cloud for security reasons.
 
 ## Getting Started
@@ -67,7 +67,7 @@ You can try the app here:
 > **Note:**
 >
 > * The file path (server-side) feature works only on company servers or local PC installations.
-> * For cloud demo, please use the file upload feature (max 200 MB).
+> * For cloud demo, please use the file upload feature (max 500 MB).
 
 ---
 
